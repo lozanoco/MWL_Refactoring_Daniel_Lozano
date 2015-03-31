@@ -2,9 +2,9 @@ package intervals;
 
 public abstract class Interval {
 
-	public double minimum;
-	public double maximum;
-	public Opening opening;
+	private double minimum;
+	private double maximum;
+	private Opening opening;
 
 	public Interval(double minimum, double maximum, Opening opening) {
 		this.minimum = minimum;
@@ -142,6 +142,30 @@ public abstract class Interval {
 	public boolean equals(Object object) {
 		// TODO
 		return false;
+	}
+	
+	public double getMinimum() {
+		return minimum;
+	}
+
+	public void setMinimum(double minimum) {
+		this.minimum = minimum;
+	}
+
+	public double getMaximum() {
+		return maximum;
+	}
+
+	public void setMaximum(double maximum) {
+		this.maximum = maximum;
+	}
+
+	public Opening getOpening() {
+		return opening;
+	}
+
+	public void setOpening(Opening opening) {
+		this.opening = opening;
 	}
 
 }

@@ -6,9 +6,10 @@ public class RightOpenedInterval extends Interval{
 		super(minimum, maximum, opening);
 		// TODO Auto-generated constructor stub
 	}
+
 	@Override
 	public boolean includes(double value) {
-		return minimum <= value && value < maximum;
+		return this.getMinimum() <= value && value < this.getMaximum();
 	}
 
 }
