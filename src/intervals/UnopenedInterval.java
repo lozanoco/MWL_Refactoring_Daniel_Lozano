@@ -12,4 +12,10 @@ public class UnopenedInterval extends Interval{
 		return this.getMinimum() <= value && value <= this.getMaximum();
 	}
 
+	@Override
+	public boolean includes(Interval interval) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

@@ -1,6 +1,6 @@
 package intervals;
 
-public class IntervalFactory {
+public abstract class IntervalFactory {
 	
 	public static Interval getInterval(double minimum, double maximum, Opening opening) {
 		switch (opening) {
