@@ -6,7 +6,7 @@ public class BothOpenedInterval extends Interval{
 		super(minimum, maximum, opening);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
 	public boolean includes(double value) {
 		return this.getMinimum() < value && value < this.getMaximum();
@@ -14,8 +14,25 @@ public class BothOpenedInterval extends Interval{
 
 	@Override
 	public boolean includes(Interval interval) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+		boolean minimumIncluded = this.includes(interval.getMinimum());
+		boolean maximumIncluded = this.includes(interval.getMaximum());
+		switch (interval.getOpening()) {
+		case BOTH_OPENED:
+			return (minimumIncluded || getMinimum() == interval.getMinimum())
+					&& (maximumIncluded || getMaximum() == interval.getMaximum());
+		case LEFT_OPENED:
+			return (minimumIncluded || getMinimum() == interval.getMinimum())
+					&& (maximumIncluded);
+		case RIGHT_OPENED:
+			return (minimumIncluded)
+					&& (maximumIncluded || getMaximum() == interval.getMaximum());
+		case UNOPENED:
+			return (minimumIncluded)
+					&& (maximumIncluded);
+		default:
+			assert false;
+			return false;
+		}
 
+	}
 }
