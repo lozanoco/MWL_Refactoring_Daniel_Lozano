@@ -35,4 +35,17 @@ public class LeftOpenedInterval extends Interval{
 		}
 	}
 
+	@Override
+	public boolean intersectsWith(Interval interval) {
+		if (getMinimum() == interval.getMaximum()) {
+			return false;
+		}
+		else if(getMaximum() == interval.getMinimum()){
+			return interval.getOpening() == Opening.UNOPENED
+					|| interval.getOpening() == Opening.RIGHT_OPENED;
+		}
+		else return this.includes(interval.getMinimum())
+				|| this.includes(interval.getMaximum());
+	}
+
 }

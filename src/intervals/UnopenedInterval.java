@@ -35,4 +35,18 @@ public class UnopenedInterval extends Interval{
 		}
 	}
 
+	@Override
+	public boolean intersectsWith(Interval interval) {
+		if(getMaximum() == interval.getMinimum()){
+			return interval.getOpening() == Opening.UNOPENED
+					|| interval.getOpening() == Opening.RIGHT_OPENED;
+		}
+		else if(getMinimum() == interval.getMaximum()){
+			return interval.getOpening() == Opening.BOTH_OPENED
+					|| interval.getOpening() == Opening.LEFT_OPENED;
+		}
+		else return this.includes(interval.getMinimum()) 
+				|| this.includes(interval.getMaximum());
+	}
+
 }
