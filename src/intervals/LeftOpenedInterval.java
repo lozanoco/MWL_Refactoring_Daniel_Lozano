@@ -4,13 +4,8 @@ public class LeftOpenedInterval extends Interval{
 
 	public LeftOpenedInterval(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);
-		minPoint = new Point(minimum);
-		maxPoint = new Point(maximum);
-	}
-
-	@Override
-	public boolean includes(double value) {
-		return this.minPoint.isLower(value) && this.maxPoint.isGreaterOrE(value);
+		minPoint = new OpenedPoint(minimum);
+		maxPoint = new ClosedPoint(maximum);
 	}
 
 	@Override

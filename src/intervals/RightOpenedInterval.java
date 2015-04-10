@@ -4,14 +4,10 @@ public class RightOpenedInterval extends Interval{
 
 	public RightOpenedInterval(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);
-		minPoint = new Point(minimum);
-		maxPoint = new Point(maximum);
+		minPoint = new ClosedPoint(minimum);
+		maxPoint = new OpenedPoint(maximum);
 	}
 
-	@Override
-	public boolean includes(double value) {
-		return this.minPoint.isLowerOrE(value) && this.maxPoint.isGreater(value);
-	}
 
 	@Override
 	public boolean includes(Interval interval) {

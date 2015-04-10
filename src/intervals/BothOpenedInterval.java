@@ -4,13 +4,8 @@ public class BothOpenedInterval extends Interval{
 
 	public BothOpenedInterval(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);
-		minPoint = new Point(minimum);
-		maxPoint = new Point(maximum);
-	}
-
-	@Override
-	public boolean includes(double value) {
-		return this.minPoint.isLower(value) && this.maxPoint.isGreater(value);
+		minPoint = new OpenedPoint(minimum);
+		maxPoint = new OpenedPoint(maximum);
 	}
 
 

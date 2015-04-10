@@ -4,13 +4,8 @@ public class UnopenedInterval extends Interval{
 
 	public UnopenedInterval(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);
-		minPoint = new Point(minimum);
-		maxPoint = new Point(maximum);
-	}
-
-	@Override
-	public boolean includes(double value) {
-		return this.minPoint.isLowerOrE(value) && this.maxPoint.isGreaterOrE(value);
+		minPoint = new ClosedPoint(minimum);
+		maxPoint = new ClosedPoint(maximum);
 	}
 
 	@Override

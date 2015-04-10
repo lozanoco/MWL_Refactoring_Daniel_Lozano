@@ -12,15 +12,15 @@ public abstract class Interval {
 		this.minimum = minimum;
 		this.maximum = maximum;
 		this.opening = opening;
-		this.minPoint = new Point(minimum);
-		this.maxPoint = new Point(maximum);
 	}
 
 	public double midPoint() {
 		return (maximum + minimum) / 2;
 	}
 
-	public abstract boolean includes(double value);
+	public boolean includes(double value){
+		return this.minPoint.isLower(value) && this.maxPoint.isGreater(value);
+	}
 
 	public abstract boolean includes(Interval interval);		
 
