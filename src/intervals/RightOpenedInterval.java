@@ -41,7 +41,7 @@ public class RightOpenedInterval extends Interval{
 			return false;
 		}
 		else if(getMinimum() == interval.getMaximum()){
-			return interval.getOpening() == Opening.BOTH_OPENED
+			return interval.getOpening() == Opening.UNOPENED
 					|| interval.getOpening() == Opening.LEFT_OPENED;
 		}
 		else return this.includes(interval.getMinimum())

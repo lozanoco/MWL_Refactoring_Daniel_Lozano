@@ -42,7 +42,7 @@ public class UnopenedInterval extends Interval{
 					|| interval.getOpening() == Opening.RIGHT_OPENED;
 		}
 		else if(getMinimum() == interval.getMaximum()){
-			return interval.getOpening() == Opening.BOTH_OPENED
+			return interval.getOpening() == Opening.UNOPENED
 					|| interval.getOpening() == Opening.LEFT_OPENED;
 		}
 		else return this.includes(interval.getMinimum()) 
