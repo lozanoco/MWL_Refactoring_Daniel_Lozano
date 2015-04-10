@@ -4,13 +4,15 @@ public class BothOpenedInterval extends Interval{
 
 	public BothOpenedInterval(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);
-		// TODO Auto-generated constructor stub
+		minPoint = new Point(minimum);
+		maxPoint = new Point(maximum);
 	}
 
 	@Override
 	public boolean includes(double value) {
-		return this.getMinimum() < value && value < this.getMaximum();
+		return this.minPoint.isLower(value) && this.maxPoint.isGreater(value);
 	}
+
 
 	@Override
 	public boolean includes(Interval interval) {

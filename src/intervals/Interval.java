@@ -5,11 +5,15 @@ public abstract class Interval {
 	private double minimum;
 	private double maximum;
 	private Opening opening;
+	public Point minPoint;
+	public Point maxPoint;
 
 	public Interval(double minimum, double maximum, Opening opening) {
 		this.minimum = minimum;
 		this.maximum = maximum;
 		this.opening = opening;
+		this.minPoint = new Point(minimum);
+		this.maxPoint = new Point(maximum);
 	}
 
 	public double midPoint() {
@@ -57,5 +61,6 @@ public abstract class Interval {
 	public void setOpening(Opening opening) {
 		this.opening = opening;
 	}
+	
 
 }
