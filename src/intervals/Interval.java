@@ -23,7 +23,7 @@ public abstract class Interval {
 	}
 
 	public boolean includes(Interval interval){
-		return this.minimum.isLower(minimum) && this.maximum.isGreater(maximum);
+		return this.minimum.isLower(interval.minimum) && this.maximum.isGreater(interval.maximum);
 	}	
 
 	public abstract boolean intersectsWith(Interval interval);
