@@ -7,7 +7,7 @@ public class RightOpenedInterval extends Interval{
 	}
 
 	@Override
-	public boolean evaluateLimits(Interval interval) {
+	public boolean evalueLimits(Interval interval) {
 		if (getMaximum().getValue() == interval.getMinimum().getValue()) {
 			return false;
 		}

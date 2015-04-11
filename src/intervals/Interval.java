@@ -29,13 +29,13 @@ public abstract class Interval {
 	public  boolean intersectsWith(Interval interval){
 		if(getMinimum().getValue() == interval.getMaximum().getValue()
 				|| getMaximum().getValue() == interval.getMinimum().getValue()){
-			return evaluateLimits(interval);
+			return evalueLimits(interval);
 		}
 		else return this.includes(interval.getMinimum().getValue()) 
 				|| this.includes(interval.getMaximum().getValue());
 	}
 	
-	public abstract boolean evaluateLimits(Interval interval);
+	public abstract boolean evalueLimits(Interval interval);
 
 	@Override
 	public String toString() {

@@ -7,7 +7,7 @@ public class UnopenedInterval extends Interval{
 	}
 
 	@Override
-	public boolean evaluateLimits(Interval interval) {
+	public boolean evalueLimits(Interval interval) {
 		if(getMaximum().getValue() == interval.getMinimum().getValue()){
 			return interval.getOpening() == Opening.UNOPENED
 					|| interval.getOpening() == Opening.RIGHT_OPENED;

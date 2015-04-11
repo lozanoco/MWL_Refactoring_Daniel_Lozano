@@ -8,7 +8,7 @@ public class LeftOpenedInterval extends Interval{
 
 
 	@Override
-	public boolean evaluateLimits(Interval interval) {
+	public boolean evalueLimits(Interval interval) {
 		if (getMinimum().getValue() == interval.getMaximum().getValue()) {
 			return false;
 		}

@@ -7,7 +7,7 @@ public class BothOpenedInterval extends Interval{
 	}
 
 	@Override
-	public boolean evaluateLimits(Interval interval) {
+	public boolean evalueLimits(Interval interval) {
 		return false;
 	}
 }
