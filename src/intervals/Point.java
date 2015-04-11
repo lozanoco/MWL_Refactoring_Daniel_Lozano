@@ -16,9 +16,9 @@ public abstract class Point {
 		this.value = value;
 	}
 	
-	public abstract boolean isGreater(double value);
+	public abstract boolean isGreater(Point maximum);
 	
-	public abstract boolean isLower(double value);
+	public abstract boolean isLower(Point minimum);
 
 
 }

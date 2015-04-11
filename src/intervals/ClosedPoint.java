@@ -7,13 +7,13 @@ public class ClosedPoint extends Point{
 	}
 
 	@Override
-	public boolean isGreater(double value) {
-		return this.getValue() >= value;
+	public boolean isGreater(Point point) {
+		return this.getValue() >= point.getValue();
 	}
 
 	@Override
-	public boolean isLower(double value) {
-		return this.getValue() <= value;
+	public boolean isLower(Point point) {
+		return this.getValue() <= point.getValue();
 	}
 
 }

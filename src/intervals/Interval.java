@@ -18,10 +18,13 @@ public abstract class Interval {
 	}
 
 	public boolean includes(double value){
-		return this.minimum.isLower(value) && this.maximum.isGreater(value);
+		Point point = new ClosedPoint(value);
+		return this.minimum.isLower(point) && this.maximum.isGreater(point);
 	}
 
-	public abstract boolean includes(Interval interval);	
+	public boolean includes(Interval interval){
+		return this.minimum.isLower(minimum) && this.maximum.isGreater(maximum);
+	}	
 
 	public abstract boolean intersectsWith(Interval interval);
 	
