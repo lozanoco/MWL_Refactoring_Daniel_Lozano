@@ -26,8 +26,17 @@ public abstract class Interval {
 		return this.minimum.isLower(interval.minimum) && this.maximum.isGreater(interval.maximum);
 	}	
 
-	public abstract boolean intersectsWith(Interval interval);
+	public  boolean intersectsWith(Interval interval){
+		if(getMinimum().getValue() == interval.getMaximum().getValue()
+				|| getMaximum().getValue() == interval.getMinimum().getValue()){
+			return evaluateLimits(interval);
+		}
+		else return this.includes(interval.getMinimum().getValue()) 
+				|| this.includes(interval.getMaximum().getValue());
+	}
 	
+	public abstract boolean evaluateLimits(Interval interval);
+
 	@Override
 	public String toString() {
 		// TODO

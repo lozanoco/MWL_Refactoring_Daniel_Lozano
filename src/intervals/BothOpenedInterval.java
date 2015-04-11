@@ -7,12 +7,7 @@ public class BothOpenedInterval extends Interval{
 	}
 
 	@Override
-	public boolean intersectsWith(Interval interval) {
-		if(getMinimum().getValue() == interval.getMaximum().getValue()
-				|| getMaximum().getValue() == interval.getMinimum().getValue()){
-			return false;
-		}
-		else return this.includes(interval.getMinimum().getValue())
-				|| this.includes(interval.getMaximum().getValue());
+	public boolean evaluateLimits(Interval interval) {
+		return false;
 	}
 }
