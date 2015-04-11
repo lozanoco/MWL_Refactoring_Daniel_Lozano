@@ -8,12 +8,32 @@ public class ClosedPoint extends Point{
 
 	@Override
 	public boolean isGreater(Point point) {
-		return this.getValue() >= point.getValue();
+		return point.isGreater(this);
 	}
 
 	@Override
 	public boolean isLower(Point point) {
-		return this.getValue() <= point.getValue();
+		return point.isLower(this);
+	}
+
+	@Override
+	public boolean isGreater(ClosedPoint maximum) {
+		return this.getValue() <= maximum.getValue();
+	}
+
+	@Override
+	public boolean isLower(ClosedPoint minimum) {
+		return this.getValue() >= minimum.getValue();
+	}
+
+	@Override
+	public boolean isGreater(OpenedPoint maximum) {
+		return this.getValue() < maximum.getValue();
+	}
+
+	@Override
+	public boolean isLower(OpenedPoint minimum) {
+		return this.getValue() > minimum.getValue();
 	}
 
 }

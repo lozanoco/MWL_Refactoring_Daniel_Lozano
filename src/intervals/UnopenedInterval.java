@@ -7,15 +7,6 @@ public class UnopenedInterval extends Interval{
 	}
 
 	@Override
-	public boolean includes(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.getMinimum().getValue());
-		boolean maximumIncluded = this.includes(interval.getMaximum().getValue());
-		return (minimumIncluded || getMinimum().getValue() == interval.getMinimum().getValue())
-				&& (maximumIncluded || getMaximum().getValue() == interval.getMaximum().getValue());
-		
-	}
-
-	@Override
 	public boolean intersectsWith(Interval interval) {
 		if(getMaximum().getValue() == interval.getMinimum().getValue()){
 			return interval.getOpening() == Opening.UNOPENED
