@@ -27,9 +27,11 @@ public abstract class Interval {
 	}	
 
 	public  boolean intersectsWith(Interval interval){
-		if(getMinimum().getValue() == interval.getMaximum().getValue()
-				|| getMaximum().getValue() == interval.getMinimum().getValue()){
-			return evalueLimits(interval);
+		if(getMinimum().getValue() == interval.getMaximum().getValue()){
+			return getMinimum().isExact() && interval.getMaximum().isExact();
+		}
+		else if (getMaximum().getValue() == interval.getMinimum().getValue()){
+				return getMaximum().isExact() && interval.getMinimum().isExact();
 		}
 		else return this.includes(interval.getMinimum().getValue()) 
 				|| this.includes(interval.getMaximum().getValue());
