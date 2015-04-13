@@ -37,4 +37,9 @@ public class OpenedPoint extends Point{
 		return this.getValue() >= minimum.getValue();
 	}
 
+	@Override
+	public boolean isExact() {
+		return false;
+	}
+
 }
