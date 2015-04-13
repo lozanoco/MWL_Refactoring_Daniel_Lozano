@@ -1,11 +1,10 @@
 package intervals;
 
-public abstract class Interval {
+public class Interval {
 
 	private Point minimum;
 	private Point maximum;
 	private Opening opening;
-
 
 	public Interval(Point minimum, Point maximum, Opening opening) {
 		this.minimum = minimum;
@@ -31,13 +30,11 @@ public abstract class Interval {
 			return getMinimum().isExact() && interval.getMaximum().isExact();
 		}
 		else if (getMaximum().getValue() == interval.getMinimum().getValue()){
-				return getMaximum().isExact() && interval.getMinimum().isExact();
+			return getMaximum().isExact() && interval.getMinimum().isExact();
 		}
 		else return this.includes(interval.getMinimum().getValue()) 
 				|| this.includes(interval.getMaximum().getValue());
 	}
-	
-	public abstract boolean evalueLimits(Interval interval);
 
 	@Override
 	public String toString() {
@@ -50,7 +47,7 @@ public abstract class Interval {
 		// TODO
 		return false;
 	}
-	
+
 	public Point getMinimum() {
 		return minimum;
 	}
@@ -74,6 +71,6 @@ public abstract class Interval {
 	public void setOpening(Opening opening) {
 		this.opening = opening;
 	}
-	
+
 
 }
